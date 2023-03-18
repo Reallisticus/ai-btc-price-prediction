@@ -1,28 +1,64 @@
-# Create T3 App
+# T3 Stack Application - Coingecko API
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+This is an application that utilizes the T3 Stack (tRPC, Prisma, NextJS, Tailwind) to fetch historical data from the Coingecko API for Bitcoin. The application also includes a prompt input field that uses the OpenAI GPT-3 API to generate responses.
 
-## What's next? How do I make an app with this?
+## Getting Started
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+1. Clone this repository
+2. Run `npm install` to install dependencies
+3. Create a `.env.local` file with the following environment variables:
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+```
+COINGECKO_API_KEY=
+CHATGPT3_API_KEY=
+CHATGPT3_API_ORG=
+```
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+4. Run `npm run dev` to start the development server
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Learn More
+## Features
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+- Fetches historical data from Coingecko API for Bitcoin
+- Prompt input field that generates responses using OpenAI GPT-3 API
+- Responsive UI built with Tailwind CSS
+- Built using the T3 Stack
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Dependencies
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+- [tRPC](https://trpc.io/) - A TypeScript RPC framework built for React
+- [Prisma](https://www.prisma.io/) - A modern database toolkit
+- [Next.js](https://nextjs.org/) - A React framework for building server-side rendered applications
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 
-## How do I deploy this?
+## API Endpoints
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+### `/api/coingecko`
+
+This endpoint fetches historical data for Bitcoin from the Coingecko API.
+
+#### Query Parameters
+
+- `days` (required) - The number of days of historical data to fetch.
+
+Example: `/api/coingecko?days=7`
+
+### `/api/openai`
+
+This endpoint generates responses using the OpenAI GPT-3 API.
+
+#### Query Parameters
+
+- `prompt` (required) - The prompt to generate a response for.
+
+Example: `/api/openai?prompt=What is the meaning of life?`
+
+## Acknowledgements
+
+- [Coingecko API](https://www.coingecko.com/en/api)
+- [OpenAI GPT-3 API](https://openai.com/api/gpt-3/)
+- [Tailwind Starter Kit by Creative Tim](https://www.creative-tim.com/learning-lab/tailwind-starter-kit/presentation)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [tRPC Documentation](https://trpc.io/docs)
+- [Prisma Documentation](https://www.prisma.io/docs/)
+- [React TypeScript Cheatsheets](https://react-typescript-cheatsheet.netlify.app/)
